@@ -247,7 +247,7 @@
                                         req))
                                  raw-page-count-response))
           response (wrapped-assertions request)]
-      (is (= {:count 2}
+      (is (= "{\"count\":2}"
              (:body response)))
       (is (= (:headers raw-page-count-response)
              (:headers response))))))
