@@ -249,9 +249,6 @@
           response (wrapped-assertions request)]
       (is (= {:count 2}
              (:body response)))
-      (pp/pprint (:headers raw-page-count-response))
-      (print "vs")
-      (pp/pprint (:headers response))
 
       ;; clj-http 3.7 strips content-enconding
       (is (= (dissoc (:headers raw-page-count-response) "content-encoding")
