@@ -247,8 +247,13 @@
                                         req))
                                  raw-page-count-response))
           response (wrapped-assertions request)]
-      (is (= "{\"count\":2}"
+      (is (= {:count 2}
              (:body response)))
-      (is (= (:headers raw-page-count-response)
+      (pp/pprint (:headers raw-page-count-response))
+      (print "vs")
+      (pp/pprint (:headers response))
+
+      ;; clj-http 3.7 strips content-enconding
+      (is (= (dissoc (:headers raw-page-count-response) "content-encoding")
              (:headers response))))))
 
