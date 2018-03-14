@@ -13,7 +13,7 @@
                  [com.cemerick/friend "0.2.3"]]
   :profiles {:dev {:dependencies [[ring-mock "0.3.2"]
                                   [org.clojure/clojure "1.6.0"]]}
-             :test {:dependencies [[cheshire "5.8.0"]
+             :test {:dependencies [[cheshire "5.8.0"] ;; Needed to pass client_test wrap..middleware.
                                    [org.clojure/clojure "1.6.0"]
                                    [ring-mock "0.1.3"]]}
              :1.5 {:dependencies [[org.clojure/clojure "1.5.0"]]}}
